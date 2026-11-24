@@ -18,8 +18,8 @@
 @font-face{font-family:Manrope;src:url(manrope-latin-700-normal.woff2);font-weight:700;font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#070A1F;--acc:#A78BFA;--tx:#F3F2FF;--soft:rgba(245,243,255,.74);--mute:rgba(245,243,255,.56);--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12)}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
-body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--tx);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color 1s ease}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--tx);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background-color 1s ease}
 img{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
@@ -250,7 +250,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 .vr.in{opacity:1;transform:none}.vr.in .vu i{transform:scale(1)}
 @media(min-width:820px){.vh,.vr{grid-template-columns:230px 1fr 1fr}.vh span:first-child{display:block}.vl,.vh span:first-child{grid-column:auto}.vl{padding:20px}.vt,.vu{padding:20px;align-items:center}.vh span{padding:18px 20px;font-size:17px}}
 .ws{display:flex;justify-content:center}
-@media(min-width:960px){.two .prow .ws{zoom:.82}}
+@media(min-width:960px){.two .prow .ws{zoom:.82}}@media(min-width:960px) and (max-width:1180px){.two .prow .ws{zoom:.7}}
 
 .eng{width:300px;height:610px;flex:none;border-radius:40px;background:#070A1F;background-image:linear-gradient(rgba(120,140,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(120,140,255,.06) 1px,transparent 1px);background-size:34px 34px;border:6px solid #1B2042;padding:14px 12px 0;position:relative;overflow:hidden;color:#ECEBFF;font-family:Manrope,sans-serif;line-height:1.3;box-shadow:0 50px 90px -40px rgba(0,0,0,.9),0 0 0 1px rgba(167,139,250,.15)}
 .e-top{display:flex;align-items:center;gap:8px;background:rgba(20,24,60,.7);border:1px solid rgba(167,139,250,.18);border-radius:16px;padding:9px 10px}
@@ -321,6 +321,34 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 .e-nav span i{width:14px;height:14px;border:2px solid currentColor;border-radius:4px;opacity:.8}
 .e-nav .on{background:rgba(139,92,246,.2);color:#fff;box-shadow:inset 0 0 0 1px rgba(167,139,250,.4)}
 
+
+.roles{display:grid;gap:10px;margin-top:26px}
+@media(min-width:560px){.roles{grid-template-columns:1fr 1fr}}
+.role{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:var(--card)}
+.role b{display:block;font-family:Sora;font-size:17px}
+.role span{font-size:15px;color:var(--soft);line-height:1.45;display:block;margin-top:4px}
+.role.lim{border-color:color-mix(in srgb,var(--acc) 60%,transparent);background:color-mix(in srgb,var(--acc) 10%,transparent)}
+.ni{background:#fff;color:#14112E;border-radius:24px;padding:26px;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+.ni-top{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-bottom:18px;border-bottom:1px solid #ECE8F5}
+.ni-top b{display:block;font-size:clamp(44px,8vw,64px);font-weight:800;letter-spacing:-.05em;line-height:1;background:linear-gradient(90deg,#8B5CF6,#0EA5E9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ni-top span{font-size:15px;color:#5B5870;font-weight:600}
+.ni-rows{display:grid;gap:14px;margin-top:18px}
+.ni-rows div{display:grid;grid-template-columns:76px 1fr 56px;gap:12px;align-items:center;font-size:15px;font-weight:600}
+.ni-rows i{height:10px;border-radius:9px;background:#F1EEF8;overflow:hidden}
+.ni-rows u{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#8B5CF6,#0EA5E9);min-width:8px;transform-origin:left;transform:scaleX(0);transition:transform 1.2s cubic-bezier(.2,.8,.2,1) .3s}
+.cs.in .ni-rows u{transform:none}
+.ni-rows em{font-style:normal;text-align:right;font-family:Sora;font-weight:800}
+.ni-n{font-size:14px;color:#6F6B85;margin-top:18px}
+.engs{display:grid;gap:16px;margin-top:30px}
+@media(min-width:860px){.engs{grid-template-columns:1fr 1fr}}
+.engc{border-radius:24px;padding:26px;background:var(--card);border:1px solid var(--line)}
+.engh{display:flex;gap:14px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.engh i{width:46px;height:46px;border-radius:14px;flex:none}
+.engh b{display:block;font-family:Sora;font-size:22px;letter-spacing:-.02em}
+.engh span{font-size:15px;color:var(--mute)}
+.engc ul{list-style:none;display:grid;gap:10px;margin-top:16px}
+.engc li{padding-left:22px;position:relative;font-size:16.5px;color:var(--soft)}
+.engc li:before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:3px;background:var(--acc)}
 /* demo phone */
 .ph{width:290px;height:500px;background:#0E1828;border:1px solid #2A3C60;border-radius:34px;padding:18px 16px;position:relative;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.8);color:#E8EEF7;line-height:1.3;font-family:Manrope,sans-serif;font-size:14px}
 .ph .top{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:3px;font-weight:700;color:#fff;margin-bottom:10px;position:static;background:none;backdrop-filter:none}
@@ -415,13 +443,19 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
  <div class="two" style="margin-top:0">
   <div class="rv"><span class="step"><b>3</b>Confirmed and shipped</span>
    <h2>No order <span class="hl">gets lost.</span></h2>
-   <p class="lead">Every order is confirmed by phone, sent to the courier and followed until the cash comes back.</p>
+   <p class="lead">The confirmation team works inside the engine, so every order is called, confirmed, shipped and followed until the cash comes back.</p>
    <ul class="bl">
-    <li><span><b>Abandoned orders saved</b> with one-tap call and WhatsApp buttons</span></li>
-    <li><span><b>Call-centre confirmation</b> synced with the store</span></li>
+    <li><span><b>Call the customer from the app</b> in one tap</span></li>
+    <li><span><b>First message ready</b> to send by SMS or WhatsApp</span></li>
+    <li><span><b>Every confirmation call followed</b>: who called, when, and the result</span></li>
+    <li><span><b>Orders sorted by status</b>, so nobody calls twice or forgets one</span></li>
+    <li><span><b>Abandoned orders saved</b> and ready to call back</span></li>
     <li><span><b>Courier sync every 10 minutes</b>: status, returns and cash</span></li>
-    <li><span><b>Push alerts</b> on desktop and the Android app</span></li>
    </ul>
+   <div class="roles">
+    <div class="role"><b>Owner</b><span>Sees everything: orders, ads, profit, cash</span></div>
+    <div class="role lim"><b>Confirmation team</b><span>Limited access: only the orders to call. No profit, no ad data.</span></div>
+   </div>
   </div>
   <div class="prow zoom"><div><div class="ws"><div class="eng"><div class="e-top"><span class="e-logo"><i></i>Your <b>Engine</b></span><span class="e-ic"></span><span class="e-ic on"></span></div><div class="e-t">Orders <span>pipeline</span></div><p class="e-sub">Tap an order to open it. Copy it for the call team in one tap.</p><div class="e-act"><span>Copy all new</span><span>Sync courier</span><span>CSV</span></div><div class="e-box"><div class="e-chips"><span class="">New<b>12</b></span><span class="">Abandoned<b>4</b></span><span class="">Confirmed<b>31</b></span><span class="">Sent to courier<b>22</b></span><span class="g">Delivered<b>64</b></span><span class="">Cancelled<b>6</b></span><span class="">Returned<b>5</b></span><span class="on">All<b>144</b></span><span class="r">Risky<b>3</b></span></div><div class="e-lab">Filter by courier step</div><div class="e-chips"><span>Preparing<b>2</b></span><span>In transit<b>7</b></span><span>Out for delivery<b>9</b></span><span>Delivered<b>64</b></span></div></div><div class="e-nav"><span class=""><i></i>Overview</span><span class="on"><i></i>Orders</span><span class=""><i></i>Products</span><span class=""><i></i>Courier</span><span class=""><i></i>Calls</span><span class=""><i></i>Profit</span></div></div></div><p class="phcap">Orders pipeline</p></div><div><div class="ws"><div class="eng"><div class="e-top"><span class="e-logo"><i></i>Your <b>Engine</b></span><span class="e-ic"></span><span class="e-ic on"></span></div><div class="e-card"><div class="e-ch"><b>Revenue &amp; orders</b><span><i style="background:#22D3EE"></i>Revenue <i style="background:#A78BFA"></i>Orders</span></div><svg viewBox="0 0 260 120" class="e-area"><defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity=".5"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></linearGradient></defs><path d="M0 110 C30 110 40 104 60 96 S90 50 104 40 S124 84 140 80 S170 70 180 30 S200 10 210 24 S230 92 260 104 L260 120 L0 120Z" fill="url(#ar)"/><path d="M0 110 C30 110 40 104 60 96 S90 50 104 40 S124 84 140 80 S170 70 180 30 S200 10 210 24 S230 92 260 104" fill="none" stroke="#22D3EE" stroke-width="2.5"/><path d="M0 112 C30 112 42 100 62 90 S92 58 106 48 S126 90 142 84 S168 76 182 40 S202 22 212 34 S232 96 260 106" fill="none" stroke="#A78BFA" stroke-width="2.5"/></svg></div><div class="e-card"><div class="e-ch"><b>Live feed</b><span>latest activity</span></div><div class="e-feed"><i style="background:linear-gradient(135deg,#F472B6,#FB7185)">A</i><div><b>Customer A.</b><small>ordered ×1</small></div><em>185<small>2m ago</small></em></div><div class="e-feed"><i style="background:linear-gradient(135deg,#22D3EE,#818CF8)">B</i><div><b>Customer B.</b><small>ordered ×2</small></div><em>250<small>9m ago</small></em></div><div class="e-feed"><i style="background:linear-gradient(135deg,#A78BFA,#F0ABFC)">C</i><div><b>Customer C.</b><small>ordered ×3</small></div><em>285<small>21m ago</small></em></div></div><div class="e-nav"><span class="on"><i></i>Overview</span><span class=""><i></i>Orders</span><span class=""><i></i>Products</span><span class=""><i></i>Courier</span><span class=""><i></i>Calls</span><span class=""><i></i>Profit</span></div></div></div><p class="phcap">Live orders and revenue</p></div></div>
  </div>
@@ -458,8 +492,34 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 
  <div class="custom zoom">
   <div class="big">100%<br>custom</div>
-  <div><p>The whole system is built from scratch around your business, so it fits any COD brand.</p>
+  <div><p>The whole system is built from scratch around your business, so it fits any COD brand. <b>You own the data. No platform and no one else has it.</b></p>
    <div class="tags"><span>Your products and packs</span><span>Your courier</span><span>Your call centre</span><span>Any currency</span><span>Arabic, French, English</span><span>Any niche</span></div></div>
+ </div>
+
+ <div class="rv" style="margin-top:80px"><h3 class="d" style="font-size:clamp(30px,4.4vw,46px);font-weight:800;letter-spacing:-.04em;line-height:1.05">Two engines, <span class="hl">two different businesses</span></h3><p class="lead" style="margin-top:12px">Same idea, built differently for each brand's market, language, courier and way of confirming orders.</p></div>
+ <div class="engs">
+  <div class="engc zoom">
+   <div class="engh"><i style="background:linear-gradient(135deg,#C9A24B,#F5D27A)"></i><div><b>Pharmavita Engine</b><span>Supplements, Tunisia</span></div></div>
+   <ul>
+    <li>French store with monthly cure packs</li>
+    <li>Own call centre confirms every order</li>
+    <li>Courier connected by API, cash and stock tracked</li>
+    <li>Real profit per ad, per day</li>
+    <li>Regions ranked by delivery and returns</li>
+    <li>Moved off a monthly SaaS platform</li>
+   </ul>
+  </div>
+  <div class="engc zoom">
+   <div class="engh"><i style="background:linear-gradient(135deg,#8B5CF6,#22D3EE)"></i><div><b>Dealbox Engine</b><span>Gadgets, Libya</span></div></div>
+   <ul>
+    <li>Arabic store, right to left, prices in LYD</li>
+    <li>Catalogue of 40 products, each with its own stats</li>
+    <li>Orders confirmed on WhatsApp, copied in one tap</li>
+    <li>Local courier synced step by step</li>
+    <li>Risky orders flagged before shipping</li>
+    <li>Ad cost per confirmed and delivered order</li>
+   </ul>
+  </div>
  </div>
 
  <div class="feat">
@@ -485,6 +545,8 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
   <div class="vr"><div class="vl">Abandoned forms</div><div class="vt"><i>✕</i>Lost</div><div class="vu"><i>✓</i>Saved with call and WhatsApp buttons</div></div>
   <div class="vr"><div class="vl">Courier status</div><div class="vt"><i>✕</i>Checked by hand</div><div class="vu"><i>✓</i>Synced every 10 minutes</div></div>
   <div class="vr"><div class="vl">The store</div><div class="vt"><i>✕</i>Template, monthly platform fee</div><div class="vu"><i>✓</i>Custom, Google speed 96 / 100</div></div>
+  <div class="vr"><div class="vl">Your data</div><div class="vt"><i>✕</i>Kept by the platform</div><div class="vu"><i>✓</i>Yours alone, no one else has it</div></div>
+  <div class="vr"><div class="vl">Confirmation team</div><div class="vt"><i>✕</i>Spreadsheets and copy-paste</div><div class="vu"><i>✓</i>Calls, messages and follow-up in the app, with limited access</div></div>
   <div class="vr"><div class="vl">Fits your business</div><div class="vt"><i>✕</i>You adapt to the tool</div><div class="vu"><i>✓</i>Built around your products, courier and language</div></div>
  </div>
 </div></section>
@@ -497,13 +559,23 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
   <div class="rr"><div class="c">Netinfo<small>Training, Tunisia</small></div><p>Lead campaigns for paid courses, each course tracked from spend to revenue.</p><div class="v">47x<small>return on ad spend</small></div></div>
   <div class="rr"><div class="c">Parastore<small>Health and beauty, Tunisia</small></div><p>Ads for the store and its supplier brands, with packs in the ads.</p><div class="v">×9<small>daily orders</small></div></div>
   <div class="rr"><div class="c">Jinan venue<small>Events, Tunisia</small></div><p>New brand, AI visuals and small Facebook campaigns.</p><div class="v">7<small>weddings from $116</small></div></div>
+  <div class="rr"><div class="c">Kdeco<small>Home decor, Tunisia</small></div><p>Moved the business online with Meta campaigns and a simple lead-to-sale process.</p><div class="v">10→80%<small>of revenue now online</small></div></div>
   <div class="rr"><div class="c">My own brands<small>Tunisia, Libya, Iraq</small></div><p>Deal Box, Lamsa and Pharmavita, each on my own system.</p><div class="v">8,500+<small>COD orders</small></div></div>
  </div>
 
  <div class="cs rv">
   <div><span class="step">Case study</span><h3 style="margin-top:12px">Netinfo: paid courses at 47x return</h3>
    <div class="how"><div><strong>Goal</strong><p>Fill paid courses and events with a small budget.</p></div><div><strong>What I did</strong><p>One lead campaign per course and a sheet linking each course to its spend and revenue.</p></div><div><strong>Result</strong><p>47x return across 4 courses, leads at $0.83 and $0.93.</p></div></div></div>
-  <div class="frame"><img src="ni_sheet.jpg" alt="Netinfo results sheet"></div>
+  <div class="ni">
+   <div class="ni-top"><div><b class="d">47x</b><span>return on ad spend</span></div><div><b class="d">$0.83</b><span>per lead</span></div></div>
+   <div class="ni-rows">
+    <div><span>Course 1</span><i><u style="width:100%"></u></i><em>134x</em></div>
+    <div><span>Course 2</span><i><u style="width:24%"></u></i><em>32x</em></div>
+    <div><span>Course 3</span><i><u style="width:19%"></u></i><em>26x</em></div>
+    <div><span>Course 4</span><i><u style="width:6%"></u></i><em>7x</em></div>
+   </div>
+   <p class="ni-n">Return on ad spend per course, from the client's results sheet. 34 paid sign-ups in total.</p>
+  </div>
  </div>
 
  <div class="cs flip rv">
