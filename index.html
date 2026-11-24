@@ -19,7 +19,7 @@
 @font-face{font-family:Manrope;src:url(manrope-latin-600-normal.woff2);font-weight:600;font-display:swap}
 @font-face{font-family:Manrope;src:url(manrope-latin-700-normal.woff2);font-weight:700;font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#070A1F;--acc:#A78BFA;--tx:#F3F2FF;--soft:rgba(245,243,255,.74);--mute:rgba(245,243,255,.56);--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12)}
+:root{--bg:#070A1F;--acc:#A78BFA;--tx:#F3F2FF;--soft:rgba(245,243,255,.8);--mute:rgba(245,243,255,.68);--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12)}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--tx);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background-color 1s ease}
 img{max-width:100%;height:auto;display:block}
@@ -89,18 +89,18 @@ h1 .ln:nth-child(2) span{animation-delay:.12s}h1 .ln:nth-child(3) span{animation
 .track .hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .track .ord{font-family:Sora;font-weight:800;font-size:22px}
 .track .amt{font-size:15px;color:#5B5870;font-weight:500}
-.sts{list-style:none;margin-top:20px;position:relative}
-.sts:before{content:"";position:absolute;left:17px;top:18px;bottom:18px;width:2px;background:#E7E3F2}
-.sts .fl{position:absolute;left:17px;top:18px;width:2px;height:0;background:#10B981;transition:height .6s ease}
-.sts li{display:flex;gap:14px;align-items:center;padding:8px 0;position:relative;opacity:.38;transition:opacity .4s}
+.sts{list-style:none;position:relative}
+.stw{position:relative;margin-top:20px}.stw:before{content:"";position:absolute;left:17px;top:26px;bottom:26px;width:2px;background:#E7E3F2}
+.stw .fl{position:absolute;left:17px;top:26px;width:2px;height:0;background:#10B981;transition:height .6s ease;z-index:1}
+.sts li{display:flex;gap:14px;align-items:center;padding:8px 0;position:relative;opacity:.55;transition:opacity .4s}
 .sts li.on{opacity:1}
-.sts li i{width:36px;height:36px;flex:none;border-radius:50%;background:#F3F1FA;border:2px solid #E7E3F2;display:grid;place-items:center;font-style:normal;font-size:16px;z-index:1;transition:.4s}
+.sts li i{width:36px;height:36px;flex:none;border-radius:50%;background:#F3F1FA;border:2px solid #E7E3F2;display:grid;place-items:center;font-style:normal;font-size:16px;z-index:2;position:relative;transition:.4s}
 .sts li.on i{background:#10B981;border-color:#10B981;transform:scale(1.06)}
 .sts li div{font-weight:600;font-size:17px;line-height:1.25}
-.sts li small{display:block;font-weight:400;font-size:14px;color:#6F6B85}
+.sts li small{display:block;font-weight:500;font-size:14px;color:#58546E}
 .cash{margin-top:14px;border-radius:18px;background:#D9F7EA;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;transform:translateY(12px) scale(.98);opacity:0;transition:.5s cubic-bezier(.2,.8,.2,1)}
 .cash.on{transform:none;opacity:1}
-.cash b{font-family:Sora;font-size:30px;color:#047857}
+.cash b{font-family:Sora;font-size:30px;color:#047857;white-space:nowrap}
 .cash span{font-size:15px;color:#065F46;font-weight:600}
 .cap{font-size:14px;color:var(--mute);margin-top:12px}
 /* grid helpers */
@@ -394,12 +394,12 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
  <div class="zoom" id="trk">
   <div class="track" aria-label="One order followed from the ad click to the profit">
    <div class="hd"><span class="ord">Order #<span id="on">1048</span></span><span class="amt">3-month pack, 85 DT</span></div>
-   <ol class="sts"><span class="fl" id="fl"></span>
+   <div class="stw"><span class="fl" id="fl"></span><ol class="sts">
     <li><i>👆</i><div>Clicked a Meta ad<small>Chapter 1</small></div></li>
     <li><i>🛒</i><div>Ordered on the store<small>Chapter 2</small></div></li>
     <li><i>📞</i><div>Confirmed and shipped<small>Chapter 3</small></div></li>
     <li><i>📦</i><div>Delivered, Meta learns<small>Chapter 4</small></div></li>
-   </ol>
+   </ol></div>
    <div class="cash" id="cash"><span>Real profit on this order</span><b>+39 DT</b></div>
   </div>
   <p class="cap">Sample order. The page follows these 5 steps.</p>
