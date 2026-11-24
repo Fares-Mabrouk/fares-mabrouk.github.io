@@ -8,7 +8,7 @@
 <meta property="og:description" content="More delivered orders, not just more clicks.">
 <meta property="og:image" content="https://fares-mabrouk.github.io/og.jpg">
 <link rel="canonical" href="https://fares-mabrouk.github.io/">
-<meta name="theme-color" content="#070A1F">
+<meta name="theme-color" content="#08111F">
 <link rel="preload" href="sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -20,7 +20,7 @@
 @font-face{font-family:Manrope;src:url(manrope-latin-600-normal.woff2);font-weight:600;font-display:swap}
 @font-face{font-family:Manrope;src:url(manrope-latin-700-normal.woff2);font-weight:700;font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#070A1F;--acc:#A78BFA;--tx:#F3F2FF;--soft:rgba(245,243,255,.8);--mute:rgba(245,243,255,.68);--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12)}
+:root{--bg:#08111F;--acc:#38BDF8;--tx:#F1F5FB;--soft:rgba(241,245,251,.8);--mute:rgba(241,245,251,.68);--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12)}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--tx);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background-color 1s ease}
 img{max-width:100%;height:auto;display:block}
@@ -29,7 +29,7 @@ a{color:inherit}
 .w{max-width:1120px;margin:0 auto;padding:0 22px}
 .d{font-family:Sora,Manrope,sans-serif;letter-spacing:-.03em}
 /* glow that follows the chapter colour */
-body:before{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(140,150,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(140,150,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(#000,transparent 85%)}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(120,170,230,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,170,230,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(#000,transparent 85%)}
 .glow{position:fixed;inset:-20vh -20vw auto auto;width:80vw;height:80vh;border-radius:50%;background:radial-gradient(closest-side,var(--acc),transparent);opacity:.18;filter:blur(40px);pointer-events:none;z-index:-1;transition:background 1s}
 /* top bar */
 .top{position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);transition:background-color 1s}
@@ -356,6 +356,43 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 .ic.cv{background:var(--acc);color:#120e2e;border-color:var(--acc);transition:background 1s}
 .cvl{display:inline-block;margin-top:18px;font-weight:700;font-size:16px;color:var(--tx);text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:2px;text-underline-offset:5px}
 .cvl+.cue{margin-top:26px}
+
+.track{background:linear-gradient(160deg,rgba(26,46,77,.92),rgba(12,24,44,.95));color:#EAF2FB;border:1px solid rgba(120,180,240,.22);border-radius:26px;padding:24px;box-shadow:0 40px 90px -30px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.06);position:relative;overflow:hidden}
+.track .hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.track .ord{font-family:Sora;font-weight:800;font-size:22px}
+.track .amt{font-size:14px;color:#9FB3CC;font-weight:600;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);padding:4px 10px;border-radius:99px}
+.stw{position:relative;margin-top:20px}.stw:before{content:"";position:absolute;left:19px;top:26px;bottom:26px;width:2px;background:rgba(159,179,204,.22)}
+.stw .fl{position:absolute;left:19px;top:26px;width:2px;height:0;background:linear-gradient(#38BDF8,#34D399);transition:height .6s ease;z-index:1}
+.sts{list-style:none;position:relative}
+.sts li{display:flex;gap:14px;align-items:center;padding:8px 0;position:relative;color:#8EA3BE;transition:color .4s}
+.sts li.on{color:#F1F5FB}
+.sts li i{width:40px;height:40px;flex:none;border-radius:12px;background:rgba(255,255,255,.04);border:1.5px solid rgba(159,179,204,.25);display:grid;place-items:center;z-index:2;position:relative;transition:.4s;color:#8EA3BE}
+.sts li i svg{width:19px;height:19px}
+.sts li.on i{background:linear-gradient(135deg,#38BDF8,#2E8BD0);border-color:transparent;color:#06223A;box-shadow:0 8px 20px -6px rgba(56,189,248,.6)}
+.sts li div{font-weight:600;font-size:17px;line-height:1.25}
+.sts li small{display:block;font-weight:500;font-size:13.5px;color:#8EA3BE}
+.cash{margin-top:16px;border-radius:18px;background:linear-gradient(135deg,rgba(52,211,153,.18),rgba(52,211,153,.06));border:1px solid rgba(52,211,153,.35);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;transform:translateY(12px) scale(.98);opacity:0;transition:.5s cubic-bezier(.2,.8,.2,1)}
+.cash.on{transform:none;opacity:1}
+.cash b{font-family:Sora;font-size:32px;color:#34D399;white-space:nowrap}
+.cash span{font-size:15px;color:#A7F3D0;font-weight:600}
+
+.ltabs{display:flex;gap:8px;overflow-x:auto;margin:30px -22px 0;padding:0 22px 6px;scrollbar-width:none}
+.ltabs::-webkit-scrollbar{display:none}
+.ltabs button{flex:none;font:700 15px Manrope,sans-serif;color:var(--soft);background:var(--card);border:1.5px solid var(--line);border-radius:99px;padding:10px 16px;cursor:pointer;transition:.2s}
+.ltabs button[aria-selected=true]{background:var(--acc);color:#0B1426;border-color:var(--acc)}
+.lap{margin-top:22px;max-width:1000px;margin-left:auto;margin-right:auto}
+.lscr{cursor:zoom-in;position:relative;aspect-ratio:1440/725;border-radius:16px 16px 0 0;overflow:hidden;border:10px solid #1C2433;border-bottom-width:14px;background:#0A1424;box-shadow:0 50px 100px -40px rgba(0,0,0,.8)}
+.lscr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left;opacity:0;transform:scale(1.02);transition:opacity .5s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.lscr img.on{opacity:1;transform:none}
+.lbase{height:16px;margin:0 -6%;background:linear-gradient(#2A3344,#151B26);border-radius:0 0 14px 14px;position:relative}
+.lbase:before{content:"";position:absolute;left:50%;top:0;width:120px;height:6px;margin-left:-60px;border-radius:0 0 8px 8px;background:#0E131C}
+.lpd{max-width:1000px;margin:24px auto 0;display:grid;gap:16px}
+@media(min-width:860px){.lpd{grid-template-columns:1fr 1.2fr;align-items:start}}
+.lpd h4{font-family:Sora;font-weight:800;font-size:clamp(24px,3vw,30px);letter-spacing:-.03em;line-height:1.1}
+.lpd p{color:var(--soft);margin-top:8px;font-size:17px}
+.lpd ul{list-style:none;display:grid;gap:10px}
+.lpd li{display:flex;gap:12px;font-size:16.5px;color:var(--soft)}
+.lpd li:before{content:"";flex:none;width:10px;height:10px;border-radius:3px;background:var(--acc);margin-top:8px}
 /* demo phone */
 .ph{width:290px;height:500px;background:#0E1828;border:1px solid #2A3C60;border-radius:34px;padding:18px 16px;position:relative;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.8);color:#E8EEF7;line-height:1.3;font-family:Manrope,sans-serif;font-size:14px}
 .ph .top{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:3px;font-weight:700;color:#fff;margin-bottom:10px;position:static;background:none;backdrop-filter:none}
@@ -384,7 +421,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 
 <main>
 <!-- START -->
-<section class="hero" id="start" data-bg="#070A1F" data-acc="#A78BFA" data-name="Start"><div class="w hg">
+<section class="hero" id="start" data-bg="#08111F" data-acc="#38BDF8" data-name="Start"><div class="w hg">
  <div>
   <span class="pill"><i></i>Open to part-time and freelance work, any time zone</span>
   <h1><span class="ln"><span>Every ad click</span></span><span class="ln"><span>should end as</span></span><span class="ln"><span class="hl" id="h1hl">cash collected.</span></span></h1>
@@ -395,21 +432,21 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
  </div>
  <div class="zoom" id="trk">
   <div class="track" aria-label="One order followed from the ad click to the profit">
-   <div class="hd"><span class="ord">Order #<span id="on">1048</span></span><span class="amt">3-month pack, 85 DT</span></div>
+   <div class="hd"><span class="ord">Order #<span id="on">1048</span></span><span class="amt">3-month pack · $29</span></div>
    <div class="stw"><span class="fl" id="fl"></span><ol class="sts">
-    <li><i>👆</i><div>Clicked a Meta ad<small>Chapter 1</small></div></li>
-    <li><i>🛒</i><div>Ordered on the store<small>Chapter 2</small></div></li>
-    <li><i>📞</i><div>Confirmed and shipped<small>Chapter 3</small></div></li>
-    <li><i>📦</i><div>Delivered, Meta learns<small>Chapter 4</small></div></li>
+    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9l11 4-5 2-2 5z"/><path d="M5 3v3M3 5h3M5.5 9.5L4 11"/></svg></i><div>Clicked a Meta ad<small>Chapter 1, the click</small></div></li>
+    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 8H6"/></svg></i><div>Ordered on the store<small>Chapter 2, the order</small></div></li>
+    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></i><div>Confirmed and shipped<small>Chapter 3, the team</small></div></li>
+    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></i><div>Delivered, Meta learns<small>Chapter 4, the tracking</small></div></li>
    </ol></div>
-   <div class="cash" id="cash"><span>Real profit on this order</span><b>+39 DT</b></div>
+   <div class="cash" id="cash"><span>Real profit on this order</span><b>+$13</b></div>
   </div>
   <p class="cap">Sample order. The page follows these 5 steps.</p>
  </div>
 </div></section>
 
 <!-- 1 CLICK -->
-<section class="ch" id="click" data-bg="#150C33" data-acc="#C084FC" data-name="1. The click"><div class="w">
+<section class="ch" id="click" data-bg="#0B1426" data-acc="#E3B55B" data-name="1. The click"><div class="w">
  <div class="rv"><span class="step"><b>1</b>The click</span>
  <h2>I buy clicks that become <span class="hl">delivered orders.</span></h2>
  <p class="lead">Meta and TikTok campaigns judged on what gets delivered and paid, not on what Meta counts as a purchase.</p></div>
@@ -429,7 +466,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 </div></section>
 
 <!-- 2 ORDER -->
-<section class="ch" id="order" data-bg="#071A3A" data-acc="#60A5FA" data-name="2. The order"><div class="w">
+<section class="ch" id="order" data-bg="#0A1830" data-acc="#38BDF8" data-name="2. The order"><div class="w">
  <div class="rv"><span class="step"><b>2</b>The order</span>
  <h2>Fast stores that <span class="hl">take the order.</span></h2>
  <p class="lead">I build the stores myself, mobile-first. A phone-first form, packs that raise the order value, free delivery shown up front and pay on delivery.</p></div>
@@ -447,7 +484,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 </div></section>
 
 <!-- 3 CONFIRMED -->
-<section class="ch" id="ops" data-bg="#04232E" data-acc="#22D3EE" data-name="3. Confirmed and shipped"><div class="w">
+<section class="ch" id="ops" data-bg="#091C2E" data-acc="#5EC8F2" data-name="3. Confirmed and shipped"><div class="w">
  <div class="two" style="margin-top:0">
   <div class="rv"><span class="step"><b>3</b>Confirmed and shipped</span>
    <h2>No order <span class="hl">gets lost.</span></h2>
@@ -470,7 +507,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 </div></section>
 
 <!-- 4 DELIVERED -->
-<section class="ch" id="track" data-bg="#052A2A" data-acc="#2DD4BF" data-name="4. Delivered"><div class="w">
+<section class="ch" id="track" data-bg="#0A1E2A" data-acc="#5EEAD4" data-name="4. Delivered"><div class="w">
  <div class="two" style="margin-top:0">
   <div class="prow zoom" style="order:2"><div><div class="ws"><div class="eng"><div class="e-top"><span class="e-logo"><i></i>Your <b>Engine</b></span><span class="e-ic"></span><span class="e-ic on"></span></div><div class="e-t">Page <span>funnel</span></div><p class="e-sub">Real visitors only, no bots and no team.</p><div class="e-card"><div class="e-fn"><div><span>Landing views</span><b>10,000</b></div><i><u style="width:100%"></u></i></div><div class="e-fn"><div><span>Saw the packs</span><b>4,800</b></div><i><u style="width:48%"></u></i></div><div class="e-fn"><div><span>Saw the form</span><b>4,500</b></div><i><u style="width:45%"></u></i></div><div class="e-fn"><div><span>Started the form</span><b>900</b></div><i><u style="width:9%"></u></i></div><div class="e-fn"><div><span>Typed a phone</span><b>400</b></div><i><u style="width:4%"></u></i></div><div class="e-fn"><div><span>Ordered</span><b>280</b></div><i><u style="width:2.8%"></u></i></div></div><div class="e-alert" style="margin-top:10px"><b>!</b>Most visitors stop at the form</div><div class="e-nav"><span class="on"><i></i>Overview</span><span class=""><i></i>Orders</span><span class=""><i></i>Products</span><span class=""><i></i>Courier</span><span class=""><i></i>Calls</span><span class=""><i></i>Profit</span></div></div></div><p class="phcap">Page funnel</p></div></div>
   <div class="rv"><span class="step"><b>4</b>Delivered, and Meta learns</span>
@@ -487,7 +524,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 </div></section>
 
 <!-- 5 PROFIT -->
-<section class="ch" id="profit" data-bg="#1A0B2E" data-acc="#F0ABFC" data-name="5. Real profit"><div class="w">
+<section class="ch" id="profit" data-bg="#0D1628" data-acc="#E3B55B" data-name="5. Real profit"><div class="w">
  <div class="rv"><span class="step"><b>5</b>Real profit</span>
  <h2>You see the profit of <span class="hl">every single ad.</span></h2>
  <p class="lead">Not the revenue Meta reports. The money left after product, courier, returns, call centre and ads, every day, in my own engine on desktop and phone.</p></div>
@@ -530,6 +567,12 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
   </div>
  </div>
 
+ <div class="rv" style="margin-top:90px"><h3 class="d" style="font-size:clamp(30px,4.4vw,46px);font-weight:800;letter-spacing:-.04em;line-height:1.05">Inside <span class="hl">Pharmavita Engine</span></h3><p class="lead" style="margin-top:12px">Real screens from the laptop version. Names, products, campaign names and amounts are blurred.</p></div>
+ <div class="ltabs rv" role="tablist" aria-label="Pharmavita Engine screens"><button role="tab" aria-selected="true" data-i="0">Overview</button><button role="tab" aria-selected="false" data-i="1">Real profit</button><button role="tab" aria-selected="false" data-i="2">Ads</button><button role="tab" aria-selected="false" data-i="3">Funnel and packs</button><button role="tab" aria-selected="false" data-i="4">Customers</button><button role="tab" aria-selected="false" data-i="5">Team space</button></div>
+ <div class="lap zoom"><div class="lscr" id="lscr" role="button" tabindex="0" aria-label="Open the screen full size"><img src="pe_overview.webp" width="1440" height="725" alt="Pharmavita Engine, Overview screen" class="on" loading="lazy" decoding="async"><img src="pe_profit.webp" width="1440" height="725" alt="Pharmavita Engine, Real profit screen" class="" loading="lazy" decoding="async"><img src="pe_ads.webp" width="1440" height="725" alt="Pharmavita Engine, Ads screen" class="" loading="lazy" decoding="async"><img src="pe_funnel.webp" width="1440" height="725" alt="Pharmavita Engine, Funnel and packs screen" class="" loading="lazy" decoding="async"><img src="pe_customers.webp" width="1440" height="725" alt="Pharmavita Engine, Customers screen" class="" loading="lazy" decoding="async"><img src="pe_login.webp" width="1440" height="725" alt="Pharmavita Engine, Team space screen" class="" loading="lazy" decoding="async"></div><div class="lbase"></div></div>
+ <p class="cap" style="text-align:center">Tap the screen to open it full size.</p>
+ <div class="lpd" id="lpd" aria-live="polite"></div>
+
  <div class="feat">
   <div class="fg rv"><h3>Selling</h3><ul><li>Fast mobile-first landing pages</li><li>Phone-first order form</li><li>Packs and bundles</li><li>Abandoned orders saved</li><li>Right-to-left ready</li></ul></div>
   <div class="fg rv"><h3>Tracking</h3><ul><li>Pixel and Conversions API</li><li>Confirmed and delivered events</li><li>Match quality up to 8/10</li><li>Ad source on every order</li><li>Page funnel</li></ul></div>
@@ -540,7 +583,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 
 
 <!-- US VS THEM -->
-<section class="ch" id="vs" data-bg="#06091A" data-acc="#34D399" data-name="Us vs them"><div class="w">
+<section class="ch" id="vs" data-bg="#070F1C" data-acc="#34D399" data-name="Us vs them"><div class="w">
  <div class="rv"><span class="step"><b>VS</b>Why it's different</span>
  <h2>A typical COD store <span class="hl">vs my system.</span></h2>
  <p class="lead">Same ads budget, different result. Here is what changes.</p></div>
@@ -560,9 +603,9 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 </div></section>
 
 <!-- PROOF -->
-<section class="ch" id="proof" data-bg="#12082A" data-acc="#E879F9" data-name="The results"><div class="w">
+<section class="ch" id="proof" data-bg="#0B1426" data-acc="#E3B55B" data-name="The results"><div class="w">
  <div class="rv"><span class="step"><b>✓</b>The results</span>
- <h2>It works for <span class="hl">my brands and my clients.</span></h2></div>
+ <h2>It works for <span class="hl">my brands and my clients.</span></h2><p class="lead">Clients: Netinfo, Parastore, Kdeco, Jinan. My own brands: Deal Box, Lamsa, Pharmavita.</p></div>
  <div class="rt rv">
   <div class="rr"><div class="c">Netinfo<small>Training, Tunisia</small></div><p>Lead campaigns for paid courses, each course tracked from spend to revenue.</p><div class="v">47x<small>return on ad spend</small></div></div>
   <div class="rr"><div class="c">Parastore<small>Health and beauty, Tunisia</small></div><p>Ads for the store and its supplier brands, with packs in the ads.</p><div class="v">×9<small>daily orders</small></div></div>
@@ -592,6 +635,13 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
   <div class="tiles"><div class="tile"><b data-c="9" data-p="×">×9</b><span>daily orders, from almost zero</span></div><div class="tile a"><b data-c="59" data-p="+" data-s="%">+59%</b><span>average order value</span></div></div>
  </div>
 
+
+ <div class="cs rv">
+  <div><span class="step">Case study</span><h3 style="margin-top:12px">Kdeco: online sales went from 10% to 80% of revenue</h3>
+   <div class="how"><div><strong>Goal</strong><p>Move a home decor business from walk-in sales to online orders.</p></div><div><strong>What I did</strong><p>Meta campaigns for sales and messages, plus a simple lead-to-sale process the team could follow every day.</p></div><div><strong>Result</strong><p>Online became the main channel, and I kept running their ads as a freelancer after I left.</p></div></div></div>
+  <div class="tiles"><div class="tile"><b>10%</b><span>of revenue online, before</span></div><div class="tile a"><b data-c="80" data-s="%">80%</b><span>of revenue online, after</span></div></div>
+ </div>
+
  <div class="cs rv">
   <div><span class="step">Case study</span><h3 style="margin-top:12px">Jinan: an empty café turned into a wedding venue</h3>
    <p class="lead" style="font-size:18px">A new name, logo and AI visuals showed couples their wedding in the space. Then small Facebook campaigns at a few dollars a day.</p>
@@ -607,7 +657,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 </div></section>
 
 <!-- END -->
-<section class="ch" id="contact" data-bg="#070A1F" data-acc="#22D3EE" data-name="Your brand next"><div class="w">
+<section class="ch" id="contact" data-bg="#08111F" data-acc="#38BDF8" data-name="Your brand next"><div class="w">
  <div class="two" style="margin-top:0">
   <div class="rv">
    <span class="step"><b>→</b>Your brand next</span>
@@ -663,6 +713,12 @@ function show(i){tabs.forEach(function(b,j){b.setAttribute('aria-selected',i===j
  setTimeout(function(){stage.innerHTML='';stage.appendChild(phs[order[i]].cloneNode(true));var d=data[i];pd.innerHTML='<h3>'+d.t+'</h3><p>'+d.p+'</p><ul class="bl">'+d.l.map(function(x){return '<li><span>'+x+'</span></li>'}).join('')+'</ul>';requestAnimationFrame(function(){stage.classList.remove('sw')})},RM?0:260)}
 tabs.forEach(function(b,i){b.addEventListener('click',function(){show(i)})});show(0);
 if(matchMedia('(hover:hover)').matches&&!RM){stage.addEventListener('mousemove',function(e){var b=stage.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5,p=stage.querySelector('.eng');if(p)p.style.transform='rotateY('+(x*16)+'deg) rotateX('+(-y*10)+'deg)'});stage.addEventListener('mouseleave',function(){var p=stage.querySelector('.eng');if(p)p.style.transform=''})}
+
+/* laptop tabs */
+var ld=[{"t": "The day at a glance", "p": "Live numbers for today, 7 days, 30 days or any dates, with a low-stock alert when the courier runs out.", "l": ["Orders, revenue, abandoned, confirmation, delivery, visits, conversion and profit", "Change vs the last period on every number", "Low-stock alert with a \"We ordered stock\" button", "Abandoned orders with call and WhatsApp buttons"]}, {"t": "Real profit, every day", "p": "The money you keep after every cost, day by day. Open orders stay apart until they are delivered.", "l": ["Real net per day with ad spend on the same chart", "Cost per confirmed order with a break-even limit", "Cost and profit per delivered order", "Confirmation and delivery rates"]}, {"t": "Every ad, judged on cash", "p": "Campaigns, ad sets and ads, each with the money it really brought.", "l": ["Orders, confirmation, delivered, collected and real net per ad", "Green or red against your average cost", "Top refusal reason for each ad", "URL parameters ready to copy into Ads Manager"]}, {"t": "Where buyers drop off", "p": "Every step of the product page, plus what sells and where orders come from.", "l": ["Product page funnel, real visitors only", "Order status from pending to returned", "Packs sold, so offers can be tuned", "Orders by source and by region"]}, {"t": "Know your best customers", "p": "Light mode shown. Every customer with their full history.", "l": ["Repeat buyers and repeat rate", "Top spenders and most orders", "Returns and blocked customers", "Search by name or phone"]}, {"t": "A private space for the team", "p": "Each team member signs in with their own account and sees only what they need.", "l": ["Private team login, stays signed in on the device", "Live alert and sound for each new order", "Confirm, ship and follow deliveries", "Courier file in one click, light and dark mode"]}],lb=[].slice.call(document.querySelectorAll('.ltabs button')),limg=[].slice.call(document.querySelectorAll('#lscr img')),lpd=document.getElementById('lpd');
+function lshow(i){lb.forEach(function(b,j){b.setAttribute('aria-selected',i===j)});limg.forEach(function(m,j){m.classList.toggle('on',i===j);if(i===j)m.loading='eager'});var d=ld[i];lpd.innerHTML='<div><h4>'+d.t+'</h4><p>'+d.p+'</p></div><ul>'+d.l.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'}
+lb.forEach(function(b,i){b.addEventListener('click',function(){lshow(i)})});lshow(0);
+var ls=document.getElementById('lscr');function lopen(){var m=ls.querySelector('img.on');if(m)window.open(m.getAttribute('src'),'_blank')}ls.addEventListener('click',lopen);ls.addEventListener('keydown',function(e){if(e.key==='Enter')lopen()});
 /* progress + fab */
 var pr=document.getElementById('prog'),fab=document.getElementById('fab');
 function sc(){var h=root.scrollHeight-innerHeight;pr.style.width=(h>0?scrollY/h*100:0)+'%';fab.classList.toggle('on',scrollY>600)}
