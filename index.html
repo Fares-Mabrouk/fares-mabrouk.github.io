@@ -444,6 +444,21 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
 .demo{position:absolute;top:14px;right:14px;font-size:9px;letter-spacing:1px;font-weight:700;color:#0B1424;background:#F5C451;border-radius:6px;padding:3px 6px}
 .ph+.cap,.ph~.cap{display:none}
 .phcap{text-align:center;font-size:15px;font-weight:600;color:var(--soft);margin-top:14px}
+/* photo */
+.me{display:flex;align-items:center;gap:18px;margin-top:22px}
+.me img{width:76px;height:76px;flex:none;border-radius:50%;object-fit:cover;border:3px solid var(--acc);box-shadow:0 0 0 6px color-mix(in srgb,var(--acc) 18%,transparent);transition:border-color 1s,box-shadow 1s}
+.me .who{margin-top:0}
+@media(max-width:520px){.me{align-items:flex-start}.me img{width:60px;height:60px}}
+.pcard{position:relative;max-width:380px;width:100%;justify-self:center;margin-top:40px}
+.ptr{margin:0;position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.ptr img{display:block;width:100%;height:auto}
+.ptr figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 22px 20px;background:linear-gradient(transparent,rgba(5,10,20,.92));display:grid;gap:2px}
+.ptr b{font-family:Sora;font-size:22px;letter-spacing:-.02em}
+.ptr span{font-size:15px;color:var(--soft)}
+.ptr em{font-style:normal;font-size:14px;font-weight:600;color:#6EE7B7;display:flex;align-items:center;gap:8px;margin-top:6px}
+.ptr em i{width:8px;height:8px;border-radius:50%;background:#34D399;animation:pu 2s infinite}
+.tm{position:absolute;width:36%;right:-26px;top:-40px;border-radius:18px;border:5px solid #000;transform:rotate(4deg);box-shadow:0 20px 40px -12px rgba(0,0,0,.7)}
+@media(max-width:520px){.tm{right:-8px;width:34%}}
 </style></head>
 <body>
 <div class="glow" aria-hidden="true"></div>
@@ -461,7 +476,7 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
  <div>
   <span class="pill"><i></i>Open to part-time and freelance work, any time zone</span>
   <h1><span class="ln"><span>Every ad click</span></span><span class="ln"><span>should end as</span></span><span class="ln"><span class="hl" id="h1hl">cash collected.</span></span></h1>
-  <p class="who">I'm <b>Fares Mabrouk</b>. I run Meta and TikTok ads for cash-on-delivery brands, and I build the systems that follow each order until the money is in.</p>
+  <div class="me"><img src="me_sm.webp" width="240" height="240" decoding="async" alt="Fares Mabrouk"><p class="who">I'm <b>Fares Mabrouk</b>. I run Meta and TikTok ads for cash-on-delivery brands, and I build the systems that follow each order until the money is in.</p></div>
   <div class="cta"><a class="btn b1" href="https://wa.me/21653893745">Message me on WhatsApp</a><a class="btn b2" href="#proof">Jump to results</a></div>
   <a class="cvl" href="Fares_Mabrouk_CV.pdf" download>Download my CV</a>
   <a class="cue" href="#click"><i></i>Scroll and follow one order</a>
@@ -731,7 +746,10 @@ footer{padding:30px 0 110px;font-size:15px;color:var(--mute)}
     <a href="Fares_Mabrouk_Portfolio.pdf" download>PDF portfolio <span>Download</span></a>
    </div>
   </div>
-  <div class="zoom" style="max-width:360px;justify-self:center"><img src="testi.webp" width="640" height="700" loading="lazy" decoding="async" alt="Message from Amine Ghlala recommending Fares" style="border-radius:30px;border:6px solid #000;transform:rotate(2deg)"></div>
+  <div class="pcard zoom">
+   <figure class="ptr"><img src="me.webp" width="720" height="900" loading="lazy" decoding="async" alt="Fares Mabrouk, performance media buyer"><figcaption><b>Fares Mabrouk</b><span>Meta &amp; TikTok media buyer · COD e-commerce</span><em><i></i>Available now</em></figcaption></figure>
+   <img class="tm" src="testi.webp" width="640" height="700" loading="lazy" decoding="async" alt="Message from Amine Ghlala recommending Fares">
+  </div>
  </div>
 </div></section>
 </main>
